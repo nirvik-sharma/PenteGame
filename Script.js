@@ -1,4 +1,3 @@
-
 var is_Player_One_Turn = true
 
 
@@ -49,19 +48,17 @@ $(document).ready(function(){
 				$(this).css("background-color", "blue")	
 				
 					SpaceOwnerShip[x][y] = -1;
-					// if(x > 2)
-					// 	CaptureUPBLUE(x, y)
-					// if(x < 10)
-					// 	CaptureDOWNBLUE(x, y)	
-					// if(y >= 3)
-					// 	CaptureLEFTBLUE(x, y)
-					// if(y < 16)
-					// 	CaptureRightBLUE(x, y)
+
+					CaptureUp(x, y, -1, 1);
+					CaptureDown(x, y, -1, 1);
+					CaptureRight(x, y, -1, 1);
+					CaptureLeft(x, y, -1, 1);
+
+					CaptureDiagDownLeft(x, y, -1, 1);
+					CaptureDiagDownRight(x, y, -1, 1);
+					CaptureDiagUpLeft(x, y, -1, 1);
+					CaptureDiagUpRight(x, y, -1, 1);
 					
-					// CaptureD1BLUE(x, y)
-					// CaptureD2BLUE(x, y)
-					// CaptureD3BLUE(x, y)
-					// CaptureD4BLUE(x, y)
 					
 					// CheckWinnerDownB(x, y)
 					// CheckWinnerLRB(x, y)
@@ -72,15 +69,16 @@ $(document).ready(function(){
 				
 				$(this).css("background-color", "green")
 					SpaceOwnerShip[x][y] = 1;
-				// 	if(x > 2)
-				// 		CaptureUPGREEN(x, y)
-				// 	if(x < 10)
-				// 		CaptureDOWNGREEN(x, y)	
-				// 	if(y >= 3)
-				// 		CaptureLEFTGREEN(x, y)
-				// 	if(y < 16)
-				// 		CaptureRightGREEN(x, y)
+
+					CaptureUp(x, y, 1, -1);
+					CaptureDown(x, y, 1, -1);
+					CaptureRight(x, y, 1, -1);
+					CaptureLeft(x, y, 1, -1);
 					
+					CaptureDiagDownLeft(x, y, 1, -1);
+					CaptureDiagDownRight(x, y, 1, -1);
+					CaptureDiagUpLeft(x, y, 1, -1);
+					CaptureDiagUpRight(x, y, 1, -1);
 				// 	CaptureD1GREEN(x, y)
 				// 	CaptureD2GREEN(x, y)
 				// 	CaptureD3GREEN(x, y)
