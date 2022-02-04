@@ -112,7 +112,7 @@ function greenwins() {
 function disableBoard() {
 	var boardSpaces =  document.getElementsByClassName("space")
 	for (i = 0; i < boardSpaces.length; i++) {
-		boardSpaces[i].disabled = true
+		boardSpaces[i].style.pointerEvents = 'none';
 	}
 }
 
