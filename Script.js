@@ -59,11 +59,10 @@ $(document).ready(function(){
 					CaptureDiagUpLeft(x, y, -1, 1);
 					CaptureDiagUpRight(x, y, -1, 1);
 					
-					
-					// CheckWinnerDownB(x, y)
-					// CheckWinnerLRB(x, y)
-					// CheckWinnerUPDOWNDiB(x, y)
-					// CheckWinnerDOWNUPDiB(x, y)
+					CheckWinUp(x, y, -1)
+					CheckWinRight(x, y, -1)
+					CheckWinDown(x, y, -1)
+					CheckWinLeft(x, y, -1)
 										
 			}else{
 				
@@ -79,15 +78,11 @@ $(document).ready(function(){
 					CaptureDiagDownRight(x, y, 1, -1);
 					CaptureDiagUpLeft(x, y, 1, -1);
 					CaptureDiagUpRight(x, y, 1, -1);
-				// 	CaptureD1GREEN(x, y)
-				// 	CaptureD2GREEN(x, y)
-				// 	CaptureD3GREEN(x, y)
-				// 	CaptureD4GREEN(x, y)
 				
-				// CheckWinnerDownG(x, y)
-				// CheckWinnerLRG(x, y)
-				// CheckWinnerUPDOWNDiG(x, y)
-				// CheckWinnerDOWNUPDiG(x, y)
+					CheckWinUp(x, y, 1)
+					CheckWinRight(x, y, 1)
+					CheckWinDown(x, y, 1)
+					CheckWinLeft(x, y, 1)
 			}
 		
 		
@@ -106,10 +101,19 @@ $(document).ready(function(){
 
 function bluewins() {
 	document.getElementById("turn").innerHTML = "<p id='turn'><b><span style='color:blue; font-size: 1.6em;'>Blue</span></b> Wins!</p>"
+	disableBoard()
 }
 
 function greenwins() {
 	document.getElementById("turn").innerHTML = "<p id='turn'><b><span style='color:green; font-size: 1.6em;'>Green</span></b> Wins!</p>"
+	disableBoard()
+}
+
+function disableBoard() {
+	var boardSpaces =  document.getElementsByClassName("space")
+	for (i = 0; i < boardSpaces.length; i++) {
+		boardSpaces[i].disabled = true
+	}
 }
 
 

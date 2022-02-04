@@ -1,3 +1,5 @@
+//Check for capture functions
+
 function CaptureUp(row, col, myColor, oppColor) {
     var myR = (row - 3)
     var myC = col
@@ -208,4 +210,70 @@ function CaptureDiagDownLeft(row, col, myColor, oppColor) {
         }
     }
     
+}
+
+// Check for win funtions
+
+function CheckWinUp(row, col, myColor) {
+    var myR1 = row - 4
+    var myR2 = row - 3
+    var myR3 = row - 2
+    var myR4 = row - 1
+    var myC = col
+    if(SpaceOwnerShip[myR1][myC] == myColor && SpaceOwnerShip[myR2][myC] == myColor && SpaceOwnerShip[myR3][myC] == myColor && SpaceOwnerShip[myR4][myC] == myColor) {
+        if(myColor == -1) {
+            bluewins()
+        }
+        else {
+            greenwins()
+        }
+    }
+}
+
+function CheckWinRight(row, col, myColor) {
+    var myR = row
+    var myC1 = col + 4
+    var myC2 = col + 3
+    var myC3 = col + 2
+    var myC4 = col + 1
+    if(SpaceOwnerShip[myR][myC1] == myColor && SpaceOwnerShip[myR][myC2] == myColor && SpaceOwnerShip[myR][myC3] == myColor && SpaceOwnerShip[myR][myC4] == myColor) {
+        if(myColor == -1) {
+            bluewins()
+        }
+        else {
+            greenwins()
+        }
+    }
+}
+
+function CheckWinDown(row, col, myColor) {
+    var myR1 = row + 4
+    var myR2 = row + 3
+    var myR3 = row + 2
+    var myR4 = row + 1
+    var myC = col
+    if(SpaceOwnerShip[myR1][myC] == myColor && SpaceOwnerShip[myR2][myC] == myColor && SpaceOwnerShip[myR3][myC] == myColor && SpaceOwnerShip[myR4][myC] == myColor) {
+        if(myColor == -1) {
+            bluewins()
+        }
+        else {
+            greenwins()
+        }
+    }
+}
+
+function CheckWinLeft(row, col, myColor) {
+    var myR = row
+    var myC1 = col - 4
+    var myC2 = col - 3
+    var myC3 = col - 2
+    var myC4 = col - 1
+    if(SpaceOwnerShip[myR][myC1] == myColor && SpaceOwnerShip[myR][myC2] == myColor && SpaceOwnerShip[myR][myC3] == myColor && SpaceOwnerShip[myR][myC4] == myColor) {
+        if(myColor == -1) {
+            bluewins()
+        }
+        else {
+            greenwins()
+        }
+    }
 }
